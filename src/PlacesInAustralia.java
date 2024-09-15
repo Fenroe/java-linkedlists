@@ -1,9 +1,8 @@
-import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.ListIterator;
 
 public class PlacesInAustralia {
-    private LinkedList<Place> placesList;
+    private final LinkedList<Place> placesList;
     private ListIterator<Place> iterator;
 
     public PlacesInAustralia() {
@@ -12,12 +11,7 @@ public class PlacesInAustralia {
 
     public void addToList(Place place) {
         this.placesList.add(place);
-        placesList.sort(new Comparator<Place>() {
-            @Override
-            public int compare(Place o1, Place o2) {
-                return o1.distanceFromSydney() - o2.distanceFromSydney();
-            }
-        });
+        placesList.sort((o1, o2) -> o1.distanceFromSydney() - o2.distanceFromSydney());
         this.iterator = placesList.listIterator();
     }
 

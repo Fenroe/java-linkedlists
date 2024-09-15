@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class Interactive {
-    private PlacesInAustralia places;
+    private final PlacesInAustralia places;
     private boolean programIsRunning;
 
     public Interactive(PlacesInAustralia places) {
